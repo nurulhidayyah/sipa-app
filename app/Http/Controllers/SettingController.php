@@ -78,6 +78,8 @@ class SettingController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
+            'alamat' => 'required|max:255',
+            'phone' => 'required|max:255',
             'image' => 'image|file|max:1024|mimes:png,jpg,jpeg'
         ]);
 

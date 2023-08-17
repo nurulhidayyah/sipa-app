@@ -24,6 +24,14 @@
             </button>
         </div>
     @enderror
+    @error('alamat')
+        <div class="alert alert-danger alert-dismissible fade show col-md-6" role="alert">
+            {{ $message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @enderror
     @error('phone')
         <div class="alert alert-danger alert-dismissible fade show col-md-6" role="alert">
             {{ $message }}
@@ -57,6 +65,7 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
+                            <th>Alamat</th>
                             <th>No Telp</th>
                             <th>email</th>
                             <th>Role</th>
@@ -69,6 +78,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $user->nama }}</td>
+                                <td>{{ $user->alamat }}</td>
                                 <td>{{ $user->phone }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->user_role->role }}</td>
@@ -115,6 +125,10 @@
                                 <input type="hidden" name="id" id="id" value="{{ $user->id }}">
                                 <input type="text" class="form-control" id="nama" name="nama"
                                     value="{{ $user->nama }}" placeholder="Nama">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="alamat" name="alamat"
+                                    value="{{ $user->alamat }}" placeholder="Alamat">
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="phone" name="phone"

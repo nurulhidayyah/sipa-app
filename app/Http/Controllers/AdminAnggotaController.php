@@ -76,6 +76,7 @@ class AdminAnggotaController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
+            'alamat' => 'required|max:255',
             'phone' => ['required', 'max:255'],
             'email' => 'required|email',
             'role_id' => 'required',

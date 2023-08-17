@@ -46,6 +46,9 @@
                 <div class="col">
                     <div class="card-body">
                         <h5 class="card-title">Tgl Daftar : {{ $user->created_at->format('d-m-Y') }}</h5>
+                        <p class="card-text">Email : {{ $user->email }}</p>
+                        <p class="card-text">No Telepon : {{ $user->phone }}</p>
+                        <p class="card-text">Alamat : {{ $user->alamat }}</p>
                         <p class="card-text">Status : {{ $user->is_active }}</p>
                     </div>
                 </div>

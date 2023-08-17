@@ -39,9 +39,10 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'nama' => 'Nurlita',
+            'alamat' => 'Kota Serang',
             'email' => 'nurlita@gmail.com',
             'phone' => '123',
-            'role_id' => 3,
+            'role_id' => 6,
             'password' => Hash::make('123')
         ]);
 
@@ -51,6 +52,18 @@ class DatabaseSeeder extends Seeder
 
         UserRole::create([
             'role' => 'Ketua'
+        ]);
+
+        UserRole::create([
+            'role' => 'Wakil Ketua'
+        ]);
+
+        UserRole::create([
+            'role' => 'Sekertaris'
+        ]);
+
+        UserRole::create([
+            'role' => 'Bendahara'
         ]);
 
         UserRole::create([

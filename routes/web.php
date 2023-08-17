@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminAnggotaController;
+use App\Http\Controllers\AdminExportPdf;
+use App\Http\Controllers\AdminLaporanController;
 use App\Http\Controllers\AdminTanggapanController;
 use App\Http\Controllers\AdminVerifikasiController;
 use App\Http\Controllers\KartuAnggotaController;
@@ -35,18 +37,22 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::resource('/admin/verifikasi', AdminVerifikasiController::class)->only('index', 'show')->middleware('admin');
 Route::post('/admin/tanggapan', [AdminTanggapanController::class, 'store']);
+Route::get('/admin/laporan', [AdminLaporanController::class, 'index']);
+Route::get('/admin/generate', [AdminExportPdf::class, 'index']);
 
 // ---------------------------------Ketua-------------------------------------
 
 Route::resource('/ketua/verifikasi', KetuaVerifikasiController::class)->middleware('ketua');
+Route::get('/ketua/laporan', [AdminLaporanController::class, 'index']);
+Route::get('/ketua/generate', [AdminExportPdf::class, 'index']);
 
 
 // --------------------------------Anggota-------------------------------------
 
-Route::get('/anggota/kta/{user}', [KartuAnggotaController::class, 'index']);
+Route::get('/anggota/kta/{user}', [KartuAnggotaController::class, 'index'])->middleware('anggota');
 
 // -------------------------------Settings------------------------------------
 Route::resource('/setting', SettingController::class)->only('index', 'edit', 'update')->middleware('auth');
 Route::resource('/ubah_password', SettingPasswordController::class)->only('index', 'update')->middleware('auth');
 
-Route::resource('/admin/anggota', AdminAnggotaController::class)->middleware('dataAnggota');
+Route::resource('/admin/anggota', AdminAnggotaController::class)->only('index', 'update', 'destroy')->middleware('dataAnggota');

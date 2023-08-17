@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
         
         Gate::define('anggota', function (User $user)
         {
-            return $user->role_id == 3;
+            return $user->role_id == 6;
         });
 
     }

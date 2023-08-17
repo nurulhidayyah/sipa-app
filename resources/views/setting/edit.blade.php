@@ -36,64 +36,36 @@
                         @enderror
                     </div>
                 </div>
-                {{-- <div class="form-group row">
-                    <label for="tempat_lahir" class="col-sm-3 col-form-label">Tempat Lahir</label>
+                <div class="form-group row">
+                    <label for="phone" class="col-sm-3 col-form-label">Nomor Telepon</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-                            value="{{ old('tempat_lahir', auth()->user()->tempat_lahir) }}">
+                        <input type="text"
+                            class="form-control @error('phone')
+                            is-invalid
+                        @enderror"
+                            id="phone" name="phone" value="{{ old('phone', auth()->user()->phone) }}">
+                        @error('phone')
+                            <small class="text-danger pl-3">
+                                {{ $message }}
+                            </small>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
+                    <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
                     <div class="col-sm-9">
-                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-                            value="{{ date('Y-m-d', auth()->user()->tanggal_lahir) }}">
+                        <input type="text"
+                            class="form-control @error('alamat')
+                            is-invalid
+                        @enderror"
+                            id="alamat" name="alamat" value="{{ old('alamat', auth()->user()->alamat) }}">
+                        @error('alamat')
+                            <small class="text-danger pl-3">
+                                {{ $message }}
+                            </small>
+                        @enderror
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="jenis_kelamin" class="col-sm-3 col-form-label">Jenis Kelamin</label>
-                    <div class="col-sm-9">
-                        <select class="form-control" name="jenis_kelamin">
-                            <option value="">-- Pilih Jenis Kelamin --</option>
-                            <option name="jenis_kelamin" value="Laki-laki" {{ auth()->user()->jenis_kelamin === 'Laki-laki' ? 'selected' : '' }}>Laki-Laki</option>
-                            <option name="jenis_kelamin" value="Perempuan" {{ auth()->user()->jenis_kelamin === 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="agama" class="col-sm-3 col-form-label">Agama</label>
-                    <div class="col-sm-9">
-                        <select class="form-control" name="agama">
-                            <option value="">-- Pilih Agama --</option>
-                            <option name="agama" value="Islam" {{ auth()->user()->agama === 'Islam' ? 'selected' : '' }}>Islam</option>
-                            <option name="agama" value="Kristen" {{ auth()->user()->agama === 'Kristen' ? 'selected' : '' }}>Kristen</option>
-                            <option name="agama" value="Katolik" {{ auth()->user()->agama === 'Katolik' ? 'selected' : '' }}>Katolik</option>
-                            <option name="agama" value="Budha" {{ auth()->user()->agama === 'Budha' ? 'selected' : '' }}>Budha</option>
-                            <option name="agama" value="Hindu" {{ auth()->user()->agama === 'Hindu' ? 'selected' : '' }}>Hindu</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="pekerjaan" name="pekerjaan"
-                            value="{{ old('pekerjaan', auth()->user()->pekerjaan) }}">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="alamat" class="col-sm-3 col-form-label">alamat</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="alamat" name="alamat"
-                            value="{{ old('alamat', auth()->user()->alamat) }}">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="nik" class="col-sm-3 col-form-label">NIK</label>
-                    <div class="col-sm-9">
-                        <input type="number" class="form-control" id="nik" name="nik"
-                            value="{{ old('nik', auth()->user()->nik) }}">
-                    </div>
-                </div> --}}
                 <div class="form-group row">
                     <div class="col-sm-3">Picture</div>
                     <div class="col-sm-9">
