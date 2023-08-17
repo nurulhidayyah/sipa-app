@@ -53,6 +53,18 @@
                                             @enderror
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <div class="col mb-3 mb-sm-0">
+                                            <input type="text" class="form-control @error('alamat') is-invalid @enderror"
+                                                id="alamat" name="alamat" placeholder="Alamat"
+                                                value="{{ old('alamat') }}" required>
+                                            @error('alamat')
+                                                <small class="text-danger pl-3">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="foto_ktp">Lampiran 1</label>
                                         <img class="img-fluid img-preview1 mb-3 col-sm-5">

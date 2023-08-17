@@ -19,6 +19,7 @@ class RegisterController extends Controller
             'nama' => 'required|max:255',
             'email' => ['required', 'unique:users', 'email'],
             'phone' => 'required|min:10|max:15',
+            'alamat' => 'required|max:255',
             'foto_ktp' => 'required|image|file|max:1024',
             'pas_foto' => 'required|image|file|max:1024',
             'password' => 'required|min:3|max:255'
