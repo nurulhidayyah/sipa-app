@@ -7,7 +7,7 @@
         @page {
             size: 300px 500px
         }
-        
+
         .card {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             max-width: 300px;
@@ -48,9 +48,10 @@
 </head>
 
 <body>
-    <h3 style="text-align:center">Kartu Tanda Anggota</h3>
 
     <div class="card">
+        <img src="assets/img/logo.png" style="width:100px;">
+        <h3 style="text-align:center">Kartu Tanda Anggota</h3>
         <img src="{{ 'storage/' . $data->pas_foto }}" style="width:100px">
         <h3>Partai Kebangkitan Bangsa</h3>
         <p class="title">{{ $data->nama }}</p>
