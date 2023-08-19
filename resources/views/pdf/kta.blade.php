@@ -2,65 +2,91 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Surat Pengantar SKCK</title>
+    <title>Kartu Tanda Anggota</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
         @page {
-            size: 300px 500px
+            size: 3.37in 2.12in
         }
 
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            max-width: 300px;
-            text-align: center;
-            font-family: arial;
-            position: absolute;
-        }
-
-        .title {
-            color: grey;
-            font-size: 18px;
-        }
-
-        button {
-            border: none;
-            outline: 0;
-            display: inline-block;
-            padding: 8px;
-            color: white;
-            background-color: #000;
+        #judul {
             text-align: center;
             cursor: pointer;
             width: 100%;
             font-size: 18px;
         }
 
-        a {
-            text-decoration: none;
-            font-size: 22px;
-            color: black;
-        }
-
-        button:hover,
-        a:hover {
-            opacity: 0.7;
+        #halaman {
+            width: 3.37in;
+            height: auto;
+            position: absolute;
+            margin-left: 0.5px
         }
     </style>
 </head>
 
 <body>
-
-    <div class="card">
-        <img src="assets/img/logo.png" style="width:100px;">
-        <h3 style="text-align:center">Kartu Tanda Anggota</h3>
-        <img src="{{ 'storage/' . $data->pas_foto }}" style="width:100px">
-        <h3>Partai Kebangkitan Bangsa</h3>
-        <p class="title">{{ $data->nama }}</p>
-        {{-- <div style="margin: 24px 0;">
-            <a href="#"><i class="fa fa-dribbble"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-        </div> --}}
-        <p><button>{{ $data->phone }}</button></p>
+    <div id="halaman">
+        <table style="line-height: 24px">
+            <tr>
+                <td colspan="12" style="background-color: green; padding-left: 10px; padding-top: 5px" width="700">
+                    <img src="assets/img/logo.png" width="35" style="float: left">
+                    <center>
+                        <font style="line-height: 20px; font-size: 20px; font-style: bold; color: white">KARTU TANDA
+                            ANGGOTA</font><br>
+                        <font style="line-height: 20px; font-size: 20px; font-style: bold; color: white">Partai
+                            Kebangkitan Bangsa</font><br>
+                    </center>
+                </td>
+                <!-- <td></td> -->
+                {{-- <td colspan="10" width="700" style="background-color: green">
+                    <center>
+                        <font style="line-height: 20px; font-size: 20px; font-style: bold; color: white">KARTU TANDA
+                            ANGGOTA</font><br>
+                        <font style="line-height: 20px; font-size: 20px; font-style: bold; color: white">Partai
+                            Kebangkitan Bangsa</font><br>
+                    </center>
+                </td> --}}
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">No. ID</td>
+                {{-- <td></td> --}}
+                <td colspan="8">: {{ $data->id }}</td>
+                <td rowspan="5">
+                    <div style="overflow: hidden; height: 100px; padding-right: 10px">
+                        <img src="{{ 'storage/' . $data->pas_foto }}" alt="" width="70px">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">Nama</td>
+                {{-- <td></td> --}}
+                <td colspan="8">: {{ $data->nama }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">Alamat</td>
+                {{-- <td></td> --}}
+                <td colspan="8">: {{ $data->alamat }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2" width="300">No. Telepon</td>
+                {{-- <td></td> --}}
+                <td colspan="8">: {{ $data->phone }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">Status</td>
+                {{-- <td></td> --}}
+                <td colspan="8">: {{ $data->is_active }}</td>
+            </tr>
+        </table>
     </div>
 </body>

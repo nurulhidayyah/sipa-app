@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'phone' => '123',
             'role_id' => 1,
             'is_active' => 'Anggota',
-            'status' => 'Admin',
+            'status' => 3,
             'password' => Hash::make('123')
         ]);
 
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             'phone' => '123',
             'role_id' => 2,
             'is_active' => 'Anggota',
-            'status' => 'Ketua',
+            'status' => 3,
             'password' => Hash::make('123')
         ]);
 
