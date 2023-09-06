@@ -20,8 +20,14 @@ class LoginController extends Controller
         ]);
         if (Auth::attempt($credentials)) {
             if (auth()->user()->is_active == 'Anggota') {
-                $request->session()->regenerate();
-                return redirect()->intended('/setting');
+                if (auth()->user()->status == 3) {
+                    request()->session()->invalidate();
+                    request()->session()->regenerateToken();
+                    return back()->with('loginError', 'Anda Ditolak');
+                } else {
+                    $request->session()->regenerate();
+                    return redirect()->intended('/setting');
+                }
             } else {
                 request()->session()->invalidate();
                 request()->session()->regenerateToken();
