@@ -22,6 +22,11 @@ class RegisterController extends Controller
             'alamat' => 'required|max:255',
             'foto_ktp' => 'required|image|file|max:1024',
             'pas_foto' => 'required|image|file|max:1024',
+            'pendidikan_terakhir' => 'required|max:255',
+            'pekerjaan' => 'required|max:255',
+            'tujuan' => 'required|max:255',
+            'jenis_kelamin' => 'required|max:255',
+            'status_pernikahan' => 'required|max:255',
             'password' => 'required|min:3|max:255'
         ]);
 

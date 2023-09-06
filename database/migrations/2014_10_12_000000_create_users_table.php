@@ -22,6 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('image')->nullable();
             $table->string('foto_ktp')->nullable();
             $table->string('pas_foto')->nullable();
+            $table->string('pendidikan_terakhir')->nullable();
+            $table->string('pekerjaan')->nullable();
+            $table->string('tujuan')->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->string('status_pernikahan')->nullable();
             $table->string('role_id')->default(6);
             $table->string('is_active')->default('Calon Anggota');
             $table->string('status')->default(1);
