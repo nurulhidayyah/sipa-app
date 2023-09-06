@@ -69,7 +69,7 @@
                 <label for="">Status Tanggapan</label>
                 <div class="form-group">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="status" id="status-setuju" value="3">
+                        <input class="form-check-input" type="radio" name="status" id="status-setuju" value="4">
                         <label class="form-check-label" for="status-setuju">Setuju</label>
                     </div>
                     <div class="form-check form-check-inline">

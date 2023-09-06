@@ -140,19 +140,19 @@
                 <i class="fas fa-users"></i>
                 <span>Anggota</span></a>
         </li>
-        <li class="nav-item {{ Request::is('admin/laporan*') ? 'active' : '' }}">
+        <!-- <li class="nav-item {{ Request::is('admin/laporan*') ? 'active' : '' }}">
             <a class="nav-link pb-0" href="/admin/laporan">
                 <i class="fas fa-file-pdf"></i>
                 <span>Laporan</span></a>
-        </li>
+        </li> -->
     @endcan
 
     @can('ketua')
-        <li class="nav-item {{ Request::is('ketua/verifikasi') ? 'active' : '' }}">
+        <!-- <li class="nav-item {{ Request::is('ketua/verifikasi') ? 'active' : '' }}">
             <a class="nav-link pb-0" href="/ketua/verifikasi">
                 <i class="fas fa-fw fa-user"></i>
                 <span>Verifikasi</span></a>
-        </li>
+        </li> -->
         <li class="nav-item {{ Request::is('admin/anggota*') ? 'active' : '' }}">
             <a class="nav-link pb-0" href="/admin/anggota">
                 <i class="fas fa-users"></i>

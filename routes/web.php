@@ -37,12 +37,12 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::resource('/admin/verifikasi', AdminVerifikasiController::class)->only('index', 'show')->middleware('admin');
 Route::post('/admin/tanggapan', [AdminTanggapanController::class, 'store']);
-Route::get('/admin/laporan', [AdminLaporanController::class, 'index']);
-Route::get('/admin/generate', [AdminExportPdf::class, 'index']);
+// Route::get('/admin/laporan', [AdminLaporanController::class, 'index']);
+// Route::get('/admin/generate', [AdminExportPdf::class, 'index']);
 
 // ---------------------------------Ketua-------------------------------------
 
-Route::resource('/ketua/verifikasi', KetuaVerifikasiController::class)->middleware('ketua');
+// Route::resource('/ketua/verifikasi', KetuaVerifikasiController::class)->middleware('ketua');
 Route::get('/ketua/laporan', [AdminLaporanController::class, 'index']);
 Route::get('/ketua/generate', [AdminExportPdf::class, 'index']);
 

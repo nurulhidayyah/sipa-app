@@ -33,6 +33,7 @@ class RegisterController extends Controller
 
         // $validatedData['password'] = bcrypt($validatedData['password']);
         $validatedData['foto_ktp'] = $request->file('foto_ktp')->store('lampiran');
+        $validatedData['foto_kk'] = $request->file('foto_kk')->store('lampiran');
         $validatedData['pas_foto'] = $request->file('pas_foto')->store('lampiran');
         $validatedData['password'] = Hash::make($validatedData['password']);
 

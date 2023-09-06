@@ -22,10 +22,11 @@ class AdminTanggapanController extends Controller
 
         if ($tanggapan) {
             $validatedData = $request->validate([
-                'status' => 'required'
+                'status' => 'required',
             ]);
 
             $validatedData['status'] = $request->status;
+            $validatedData['is_active'] = 'Anggota';
             User::where('id', $request->user_id)->update($validatedData);
         }
 
