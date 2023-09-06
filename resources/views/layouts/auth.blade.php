@@ -74,7 +74,7 @@
         }
 
         function previewImage2() {
-            const image = document.querySelector('#pas_foto');
+            const image = document.querySelector('#foto_kk');
             const imgPreview2 = document.querySelector('.img-preview2');
 
             imgPreview2.style.display = 'block';
@@ -84,6 +84,20 @@
 
             oFReader.onload = function (oFREvent) {
                 imgPreview2.src = oFREvent.target.result
+            }
+        }
+
+        function previewImage3() {
+            const image = document.querySelector('#pas_foto');
+            const imgPreview3 = document.querySelector('.img-preview3');
+
+            imgPreview3.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                imgPreview3.src = oFREvent.target.result
             }
         }
     </script>

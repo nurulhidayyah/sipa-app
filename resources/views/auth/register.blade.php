@@ -71,10 +71,23 @@ SIPA - Registrasi
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="pas_foto">Lampiran 2</label>
+                                    <label for="foto_kk">Lampiran 2</label>
                                     <img class="img-fluid img-preview2 mb-3 col-sm-5">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input @error('pas_foto') is-invalid @enderror" id="pas_foto" name="pas_foto" onchange="previewImage2()">
+                                        <input type="file" class="custom-file-input @error('foto_kk') is-invalid @enderror" id="foto_kk" name="foto_kk" onchange="previewImage2()">
+                                        <label class="custom-file-label" for="foto_kk">Foto KK</label>
+                                        @error('foto_kk')
+                                        <small class="text-danger pl-3">
+                                            {{ $message }}
+                                        </small>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pas_foto">Lampiran 3</label>
+                                    <img class="img-fluid img-preview3 mb-3 col-sm-5">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input @error('pas_foto') is-invalid @enderror" id="pas_foto" name="pas_foto" onchange="previewImage3()">
                                         <label class="custom-file-label" for="pas_foto">Pas Foto Ukuran 2x3</label>
                                         @error('pas_foto')
                                         <small class="text-danger pl-3">
